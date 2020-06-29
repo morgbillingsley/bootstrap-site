@@ -64,4 +64,13 @@ class Media
         $publicDir = $projectDir . '/public';
         return str_replace($publicDir, '', $this->path);
     }
+
+    public function setFromFileName(string $fileName): self
+    {
+        $mimeType = mime_content_type($fileName);
+        $this->setPath($fileName);
+        $this->setType($mimeType);
+
+        return $this;
+    }
 }

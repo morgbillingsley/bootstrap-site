@@ -87,16 +87,9 @@ class MediaController extends AbstractController
     private function createMediaObject(string $fileName): Media
     {
         $media = new Media();
-        $this->setMedia($media, $fileName);
+        $media->setFromFileName($fileName);
         $this->saveMedia($media);
         return $media;
-    }
-
-    private function setMedia(Media $media, string $fileName)
-    {
-        $media->setPath($fileName);
-        $mimeType = mime_content_type($fileName);
-        $media->setType($mimeType);
     }
 
     private function saveMedia(Media $media)
