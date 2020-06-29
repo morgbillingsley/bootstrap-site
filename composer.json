@@ -1,6 +1,17 @@
 {
-    "type": "project",
+    "name": "dylate/bootstrap-site",
+    "type": "template",
+    "description": "This is a site template for Dylate web developers. It is meant to bootstrap a PHP web app project.",
+    "keywords": ["template","dylate","website","symfony"],
     "license": "proprietary",
+    "authors": [
+        {
+            "name": "Morgan Billingsley",
+            "email": "morgan@dylate.org",
+            "homepage": "https://github.com/morgbillingsley/bootstrap-site",
+            "role": "Owner"
+        }
+    ],
     "require": {
         "php": "^7.2.5",
         "ext-ctype": "*",

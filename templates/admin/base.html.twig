@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/simple-sidebar.css"/>
+{% endblock %}
+
+{% block body %}
+    <div class="d-flex" id="wrapper">
+        {{ include('admin/_sidebar.html.twig') }}
+        <div id="page-content-wrapper">
+            {{ include('admin/_navbar.html.twig') }}
+            <div class="container-fluid">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/popper/popper.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+{% endblock %}

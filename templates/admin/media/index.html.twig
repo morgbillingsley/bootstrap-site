@@ -1,0 +1,15 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Media Index{% endblock %}
+
+{% block content %}
+    <h1>Media</h1>
+
+    <div id="mediaUploader"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="module" src="/assets/js/MediaUploader/index.js"></script>
+{% endblock %}
