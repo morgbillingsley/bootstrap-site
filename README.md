@@ -1,6 +1,6 @@
 # Dylate Bootstrap Site
 
-This is a symfony project template that will allow dylate developers to bootstrap Symfony projects easily.
+This is a symfony project template that will allow dylate developers to bootstrap PHP MVC projects easily.
 
 ## Installation
 
