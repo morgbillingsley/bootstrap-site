@@ -55,12 +55,21 @@ class NewMediaForm {
             .then((response) => response.json())
             .then((json) => {
                 console.log(json);
-                alert.success('The media was successfully uploaded!')
+                alert.success('The media was successfully uploaded!');
+                this.callSuccessCallback();
             })
             .catch((error) => {
                 console.log(error);
             });
     }
+
+    callSuccessCallback = () => {
+        if (this.callbackIsSet()) {
+            this.onSuccess();
+        }
+    }
+
+    callbackIsSet = () => undefined !== this.onSuccess && null !== this.onSuccess;
 
     static dataIsValid(data) {
         if (data.has('media_upload')) {

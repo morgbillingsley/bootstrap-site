@@ -1,12 +1,12 @@
 import ImagesTab from "./ImagesTab.js";
-import MediaTab from "./MediaTab.js";
 import FormTab from "./FormTab.js";
 import MediaCard from "./MediaCard.js";
+import OtherTab from "./OtherTab.js";
 
 class MediaUploaderDOM {
     constructor(card) {
         this.imagesTab = new ImagesTab();
-        this.otherTab = new MediaTab('other');
+        this.otherTab = new OtherTab();
         this.formTab = new FormTab('upload');
         this.tabsContainer = this.createTabsContainer();
         this.mediaCard = this.createMediaCard(card);

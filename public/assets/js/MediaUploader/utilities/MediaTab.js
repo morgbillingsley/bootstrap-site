@@ -30,14 +30,27 @@ class MediaTab extends UploaderTab {
         tabLink.setAttribute('aria-control', name);
         tabLink.setAttribute('class', 'nav-link');
         tabLink.innerText = name.capitalize();
+        tabLink.addEventListener('click', this.callOnClickCallback);
         return tabLink;
     }
+
+    callOnClickCallback = (event) => {
+        if (this.callbackIsSet()) {
+            this.onClick(event);
+        }
+    }
+
+    callbackIsSet = () => undefined !== this.onClick && null !== this.onClick;
 
     createNavItem() {
         const navItem = document.createElement('li');
         navItem.setAttribute('class', 'nav-item');
         navItem.append(this.tabLink);
         return navItem;
+    }
+
+    clear = () => {
+        this.container.innerHTML = '';
     }
 }
 
